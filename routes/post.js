@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { PrismaClient } = require("@prisma/client")
 
 const { user, post } = new PrismaClient()
+
 router.get("/", async (req, res) => {
     let posts = await post.findMany();
     res.json(posts)
